@@ -9,16 +9,16 @@ const config = {
   customFields: {
     env: process.env.REACT_APP_GITHUB_TOKEN,
     description:
-      "Your one-stop for everything Azure Cosmos DB. Code samples, docs, videos, decks, etc. Everything in one location. Community contributions are welcome.",
+      "Your one-stop for everything PostgreSQL. Code samples, docs, videos, decks, etc. Everything in one location. Community contributions are welcome.",
   },
 
-  title: "Azure Cosmos DB Gallery",
+  title: "PostgreSQL Gallery",
   tagline: "Discover - Create - Contribute",
-  url: "https://azurecosmosdb.github.io",
-  baseUrl: "/gallery/",
+  url: "https://emumbaorg.github.io",
+  baseUrl: "/postgres-gallery/",
   favicon: "img/favicon.ico",
-  organizationName: "azurecosmosdb",
-  projectName: "gallery",
+  organizationName: "EmumbaOrg",
+  projectName: "postgres-gallery",
   deploymentBranch: "gh-pages",
 
   onBrokenLinks: "throw",
@@ -49,9 +49,9 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: "Azure Cosmos DB Gallery",
+        title: "PostgreSQL Gallery",
         logo: {
-          alt: "Azure Cosmos DB logo",
+          alt: "PostgreSQL logo",
           src: "img/logo.png",
           href: "/",
           target: "_self",
