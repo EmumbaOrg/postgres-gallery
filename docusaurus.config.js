@@ -16,7 +16,7 @@ const config = {
   title: "Azure Cosmos DB Gallery",
   tagline: "Discover - Create - Contribute",
   url: "https://azurecosmosdb.github.io",
-  baseUrl: "/gallery/",
+  baseUrl: "/postgres-gallery/",
   favicon: "img/favicon.ico",
   organizationName: "EmumbaOrg",
   projectName: "postgres-gallery",
