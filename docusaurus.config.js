@@ -1,5 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+// Updated for GitHub Pages deployment - trigger pipeline
 
 import { themes as prismThemes } from "prism-react-renderer";
 import { manageCookieLabel } from "./constants.js";
@@ -9,13 +10,13 @@ const config = {
   customFields: {
     env: process.env.REACT_APP_GITHUB_TOKEN,
     description:
-      "Your one-stop for everything PostgreSQL. Code samples, docs, videos, decks, etc. Everything in one location. Community contributions are welcome.",
+      "Your one-stop for everything Azure Cosmos DB. Code samples, docs, videos, decks, etc. Everything in one location. Community contributions are welcome.",
   },
 
-  title: "PostgreSQL Gallery",
+  title: "Azure Cosmos DB Gallery",
   tagline: "Discover - Create - Contribute",
-  url: "https://emumbaorg.github.io",
-  baseUrl: "/postgres-gallery/",
+  url: "https://azurecosmosdb.github.io",
+  baseUrl: "/gallery/",
   favicon: "img/favicon.ico",
   organizationName: "EmumbaOrg",
   projectName: "postgres-gallery",
@@ -49,9 +50,9 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: "PostgreSQL Gallery",
+        title: "Azure Cosmos DB Gallery",
         logo: {
-          alt: "PostgreSQL logo",
+          alt: "Azure Cosmos DB logo",
           src: "img/logo.png",
           href: "/",
           target: "_self",
