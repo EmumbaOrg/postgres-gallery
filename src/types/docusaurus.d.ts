@@ -80,6 +80,8 @@ declare global {
         };
       }
     ) => void;
+    // Microsoft Clarity
+    clarity?: (command: string, ...args: any[]) => void;
   }
 }
 
