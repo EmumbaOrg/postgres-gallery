@@ -3,7 +3,10 @@
 // Updated for GitHub Pages deployment - trigger pipeline
 
 import { themes as prismThemes } from "prism-react-renderer";
-import { manageCookieLabel } from "./constants.js";
+import { manageCookieLabel, clarityProjectId } from "./constants.js";
+
+const isClarityEnabled =
+  process.env.NODE_ENV === "production" && Boolean(clarityProjectId);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -345,6 +348,23 @@ const config = {
         content: "width=device-width, initial-scale=1.0, maximum-scale=5.0",
       },
     },
+    // Microsoft Clarity tracking snippet (production only).
+    // Consent is passed via consentv2 in src/theme/Navbar/Layout/index.js
+    ...(isClarityEnabled
+      ? [
+          {
+            tagName: "script",
+            attributes: {
+              type: "text/javascript",
+            },
+            innerHTML: `(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "${clarityProjectId}");`,
+          },
+        ]
+      : []),
   ],
 
   presets: [

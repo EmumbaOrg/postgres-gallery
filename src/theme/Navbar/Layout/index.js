@@ -69,6 +69,8 @@ const adobeInit = () => {
   function setNonEssentialCookies(categoryPreferences) {
     if (!categoryPreferences) return;
 
+    clarityConsent(categoryPreferences);
+
     if (categoryPreferences.Analytics) {
       AnalyticsCookies(SET);
     } else {
@@ -86,6 +88,15 @@ const adobeInit = () => {
     } else {
       AdvertisingCookies(RESET);
     }
+  }
+
+  // Microsoft Clarity Consent API v2 - "denied" also clears existing Clarity cookies
+  function clarityConsent(categoryPreferences) {
+    if (typeof window.clarity !== "function") return; // Clarity not loaded (dev build or no project ID)
+    window.clarity("consentv2", {
+      analytics_Storage: categoryPreferences.Analytics ? "granted" : "denied",
+      ad_Storage: categoryPreferences.Advertising ? "granted" : "denied",
+    });
   }
 
   function AnalyticsCookies(setString) {
